@@ -32,3 +32,9 @@
     padding-bottom: 10px;
     display: block;
 }
+
+
+  ::ng-deep .mat-select-panel.role-select {
+    margin-top: 40px; /* Adjust this value as needed */
+  }
+    

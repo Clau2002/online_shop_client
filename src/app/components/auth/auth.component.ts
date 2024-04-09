@@ -25,7 +25,6 @@ export class AuthComponent {
         this.authService.login(form.value).subscribe({
           next: async (res: any) => {
             form.reset();
-            // this.userService.updateUserName(res.userName);
             this.authService.storeToken(res.token);
             this.authService.storeUser(res);
             console.log(res);
@@ -49,7 +48,6 @@ export class AuthComponent {
         this.authService.register(form.value).subscribe({
           next: async (res: any) => {
             form.reset();
-            // this.authService.storeToken(res.token, res.id);
             this.authService.storeToken(res.token);
             this.authService.storeUser(res);
             this._snackBar.open('Registration Successful', 'Dismiss', {
@@ -58,7 +56,6 @@ export class AuthComponent {
               verticalPosition: 'top',
             });
             this.isLoginMode = true;
-            // this.router.navigate(['sidebar']);
           },
           error: (err: any) => {
             this._snackBar.open('Registration Failed', 'Dismiss', {
